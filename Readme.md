@@ -41,7 +41,7 @@ git clone https://github.com/Prem-Kumar-Dev/ABCD-Project.git
 cd ABCD-Project
 ```
 
-### 2. Configure the Database <In Progress>
+### 2. Configure the Database [In Progress]
 
 Create a new database in MySQL, then update your `application.properties` file to configure the database connection.
 
