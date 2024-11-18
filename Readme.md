@@ -109,18 +109,21 @@ ABCD-Project/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── com/example/banking/
-│   │   │       ├── controller/        # REST API controllers
-│   │   │       ├── service/           # Business logic services
-│   │   │       ├── repository/        # Data access layer
-│   │   │       ├── model/             # Domain objects (e.g., User, Account)
-│   │   │       └── config/            # Spring Security and application configs
+│   │   │       ├── dao/               # Data Access Objects for JDBC
+│   │   │       ├── model/             # POJOs for database entities
+│   │   │       ├── servlets/          # Servlets for request handling
+│   │   │       └── utils/             # JDBC connection utility
 │   │   ├── resources/
-│   │   │   ├── templates/             # Thymeleaf HTML templates
+│   │   │   └── db.properties          # Database configuration
+│   │   ├── webapp/
+│   │   │   ├── WEB-INF/
+│   │   │   │   ├── web.xml            # Deployment descriptor
+│   │   │   ├── index.jsp              # Entry point
 │   │   │   ├── static/                # CSS, JavaScript, images
-│   │   │   └── application.properties # Application configuration
 │   ├── test/                          # Unit tests
 ├── pom.xml                             # Maven dependencies and build config
 └── README.md                           # Project documentation
+
 ```
 
 ---
