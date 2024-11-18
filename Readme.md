@@ -1,6 +1,3 @@
-Here’s the README content formatted for direct use in a `README.md` file:
-
-```markdown
 # Online Banking Management System
 
 ![Java](https://img.shields.io/badge/Java-11%2B-blue)  
@@ -165,7 +162,7 @@ ABCD-Project/
 ### Transaction History
 ![Transaction History](https://via.placeholder.com/600x400?text=Transaction+History)
 
-*Note: Replace placeholder images with actual screenshots.*
+*Note: Will Replace placeholder images with actual screenshot when the project is ready.*
 
 ---
 
@@ -173,5 +170,3 @@ ABCD-Project/
 
 This project is licensed under [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for details.
 ```
-
-You can directly copy and paste this into your `README.md` file. Let me know if you need further edits!
