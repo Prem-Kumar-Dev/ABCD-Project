@@ -169,4 +169,3 @@ ABCD-Project/
 ## License
 
 This project is licensed under [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for details.
-```
