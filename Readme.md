@@ -16,12 +16,13 @@
     - [Admin Functionalities](#admin-functionalities)
 8. [JDBC Implementation Notes](#jdbc-implementation-notes)
 9. [Screenshots](#screenshots)
+10. [License](#license)
 
 ---
 
 ## Overview
 
-The **Online Banking Management System** is a university project designed to simplify banking operations for users and administrators. It provides a secure and user-friendly interface for managing banking activities such as account creation, fund transfers, and transaction tracking. 
+The **Online Banking Management System** is a university project designed to simplify banking operations for users and administrators. It provides a secure and user-friendly interface for managing banking activities such as account creation, fund transfers, and transaction tracking.
 
 Developed using **Spring Boot** for backend operations, **JDBC** for database interaction, and **HTML/CSS/JavaScript** for the frontend, the system ensures seamless and efficient banking management.
 
@@ -123,7 +124,6 @@ ABCD-Project/
 │   ├── test/                          # Unit tests
 ├── pom.xml                             # Maven dependencies and build config
 └── README.md                           # Project documentation
-
 ```
 
 ---
@@ -165,10 +165,11 @@ ABCD-Project/
 ### Transaction History
 ![Transaction History](https://via.placeholder.com/600x400?text=Transaction+History)
 
-*Note: Will Replace placeholder images with actual screenshot when the project is ready.*
+*Note: Will replace placeholder images with actual screenshots when ready.*
 
 ---
 
 ## License
 
 This project is licensed under [MIT License](https://opensource.org/licenses/MIT). See the LICENSE file for details.
+```
