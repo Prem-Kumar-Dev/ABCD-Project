@@ -1,10 +1,31 @@
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+         version="4.0">
+    <display-name>Online Banking Management System</display-name>
+
+    <!-- Servlet for User -->
     <servlet>
-        <servlet-name>AccountServlet</servlet-name>
-        <servlet-class>com.example.banking.servlets.AccountServlet</servlet-class>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.example.banking.servlets.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AccountServlet</servlet-name>
-        <url-pattern>/addAccount</url-pattern>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/users</url-pattern>
     </servlet-mapping>
+
+    <!-- Servlet for Admin -->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>com.example.banking.servlets.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admins</url-pattern>
+    </servlet-mapping>
+
+    <!-- Default Welcome File -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
