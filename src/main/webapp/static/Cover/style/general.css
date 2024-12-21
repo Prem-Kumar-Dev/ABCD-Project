@@ -33,7 +33,8 @@ body.fade-in {
     margin-right: 20px;
 }
 
-.contact:hover, .about:hover{
+
+.contact:hover, .about:hover, .admin-login:hover{
     cursor: pointer;
     color:rgba(253, 146, 58, 0.837);
 }

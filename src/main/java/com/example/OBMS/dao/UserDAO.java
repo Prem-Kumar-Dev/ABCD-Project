@@ -1,15 +1,20 @@
-package main.java.com.example.OBMS.dao;
+package com.example.OBMS.dao;
 
-import main.java.com.example.OBMS.model.User;
-import main.java.example.OBMS.utils.DBConnection;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.OBMS.model.User;
+import com.example.OBMS.utils.DBConnection;
 
 public class UserDAO {
     private static final String INSERT_USER = "INSERT INTO User (name, email, password, phone_number, account_balance, status) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SELECT_USER_BY_ID = "SELECT * FROM User WHERE user_id = ?";
+    private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM User WHERE email = ?"; // Query for email
     private static final String SELECT_ALL_USERS = "SELECT * FROM User";
     private static final String UPDATE_USER = "UPDATE User SET name = ?, email = ?, phone_number = ?, account_balance = ?, status = ? WHERE user_id = ?";
     private static final String DELETE_USER = "DELETE FROM User WHERE user_id = ?";
@@ -37,6 +42,18 @@ public class UserDAO {
             }
         }
         return null;
+    }
+
+    public User getUserByEmail(String email) throws SQLException {
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(SELECT_USER_BY_EMAIL)) {
+            stmt.setString(1, email); // Set email parameter
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return mapToUser(rs); // Map result set to User object
+            }
+        }
+        return null; // Return null if no user found
     }
 
     public List<User> getAllUsers() throws SQLException {

@@ -1,4 +1,4 @@
-package main.java.com.example.OBMS.model;
+package com.example.OBMS.model;
 
 import java.sql.Timestamp;
 
