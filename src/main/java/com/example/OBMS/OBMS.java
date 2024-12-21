@@ -1,18 +1,18 @@
-package main.java.com.example.OBMS;
+package com.example.OBMS;
 
-import main.java.com.example.banking.utils.DBConnection;
-
-import java.sql.Connection;
+import java.sql.Connection;  // Correct import for DBConnection
 import java.sql.SQLException;
 
-public class Banking {
+import com.example.OBMS.utils.DBConnection;
+
+public class OBMS {  
     public static void main(String[] args) {
         // Initialize the application and check database connection
         try {
-            System.out.println("Starting Banking Application...");
+            System.out.println("Starting OBMS Application...");
             initializeDatabase();
             // Additional setup or service initialization can be done here
-            System.out.println("Banking Application started successfully.");
+            System.out.println("OBMS Application started successfully.");
         } catch (SQLException e) {
             System.err.println("Error initializing database: " + e.getMessage());
         }
