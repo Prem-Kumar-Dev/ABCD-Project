@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet" href="bank.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-university"></i> Admin Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="#"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> Reports</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="#"><i class="fas fa-chart-pie"></i> Overview</a></li>
+                <li><a href="#"><i class="fas fa-user-cog"></i> Manage Users</a></li>
+                <li><a href="#"><i class="fas fa-money-check-alt"></i> View Transactions</a></li>
+                <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+            </ul>
+        </aside>
+        <main>
+            <section class="card">
+                <h2><i class="fas fa-users"></i> Total Accounts</h2>
+                <p>1,250</p>
+            </section>
+            <section class="card">
+                <h2><i class="fas fa-exchange-alt"></i> Total Transactions</h2>
+                <p>2,340</p>
+            </section>
+            <section class="card">
+                <h2><i class="fas fa-wallet"></i> Withdraw Amount</h2>
+                <form id="withdraw-form">
+                    <label for="amount">Amount to Withdraw:</label><br>
+                    <input type="number" id="amount" name="amount" min="0" required>
+                    <button type="submit"><i class="fas fa-arrow-circle-right"></i> Withdraw</button>
+                </form>
+            </section>
+            <section class="card">
+                <h2><i class="fas fa-money-bill-wave"></i> Amount Remaining</h2>
+                <p id="remaining-balance">₹1550,000</p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p><i class="fas fa-handshake"></i> Bankese - Banking Made Easy</p>
+    </footer>
+    <script src="bank.js"></script>  
+</body>
+</html>

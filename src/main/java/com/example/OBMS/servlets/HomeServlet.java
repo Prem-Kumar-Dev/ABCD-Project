@@ -15,7 +15,7 @@ public class HomeServlet extends HttpServlet {
         // Log the request to verify flow
         System.out.println("In HomeServlet doGet method");
 
-        // Redirect to the static index.html page
-        response.sendRedirect("static/Cover/index.html");
+        // Redirect to the static index.jsp page
+        response.sendRedirect("static/Cover/index.jsp");
     }
 }

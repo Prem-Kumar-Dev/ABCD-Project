@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Banking</title>
+    <link th:href="@{/static/Main/style/general.css}" rel="stylesheet" type="text/css">
+    <script th:src="@{/static/Main/js/general.js}"></script>
+    <script>
+        <!-- Display error alert if exists -->
+            <!-- This is a workaround for Spring Boot handling errors -->
+            <script th:if="${error}" th:inline="javascript">
+                window.onload = function () {
+                alert(${error});
+            };
+    </script>
+    </script>
+</head>
+
+<body>
+<div class="circles"></div>
+<div class="circles"></div>
+<div class="circles"></div>
+
+<div class="header">
+    <p class="dashboard">Dashboard</p>
+    <p class="total">Total Balance: <span id="totalBalance" th:text="${total_balance}"></span></p>
+    <div class="right-section-header">
+        <a th:href="@{/cover}" class="logout">Logout</a>
+        <img class="profile" th:src="@{/static/Main/style/icons/profile.png}" alt="Profile">
+    </div>
+</div>
+
+<div class="page">
+    <div class="details">
+        <div class="deposit">
+            <div class="text">
+                <div class="info">Total Deposit</div>
+                <div class="amount" id="totalDeposit" th:text="${total_deposit}"></div>
+            </div>
+            <div class="icon"><img class="img" th:src="@{/static/Main/style/icons/deposit.png}"></div>
+        </div>
+        <div class="withdraw">
+            <div class="text">
+                <div class="info">Total Withdraw</div>
+                <div class="amount" id="totalWithdraw" th:text="${total_withdraw}"></div>
+            </div>
+            <div class="icon"><img class="img" th:src="@{/static/Main/style/icons/withdraw.png}"></div>
+        </div>
+        <div class="balance">
+            <div class="text">
+                <div class="info">Current Balance</div>
+                <div class="amount" id="currentBalance" th:text="${total_balance}"></div>
+            </div>
+            <div class="icon"><img class="img" th:src="@{/static/Main/style/icons/balance.png}"></div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <div class="deposit-box">
+            <div class="info-action">Deposit</div>
+            <form th:action="@{/deposit}" method="POST">
+                <div class="text-box">
+                    <input type="text" name="amount" id="depositAmount" class="search-box" placeholder="Amount">
+                </div>
+                <button class="button">Deposit</button>
+            </form>
+        </div>
+        <div class="table">
+            <button class="button" th:onclick="location.href='${urlFor('table')}'">Transaction</button>
+        </div>
+        <div class="withdraw-box">
+            <div class="info-action">Withdraw</div>
+            <form th:action="@{/withdraw}" method="POST">
+                <div class="text-box">
+                    <input type="text" name="amount" id="withdrawAmount" class="search-box" placeholder="Amount">
+                </div>
+                <button class="button">Withdraw</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function navigateWithFade(url) {
+        document.body.classList.remove('fade-in');
+        setTimeout(() => {
+            window.location.href = url;
+        }, 500);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('fade-in');
+    });
+</script>
+</body>
+
+</html>
