@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Transaction Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Table/style/general.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Transaction Table</div>
+        <div class="table_container">
+            <table class="table_content">
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>User ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction.id }}</td>
+                        <td>{{ transaction.user_id }}</td>
+                        <td>{{ transaction.date.strftime('%Y-%m-%d') }}</td>
+                        <td>{{ transaction.time.strftime('%H:%M:%S %p') }}</td>
+                        <td>{{ 'Deposit' if transaction.deposit else 'Withdraw' }}</td>
+                        <td>{{ transaction.deposit if transaction.deposit else transaction.withdraw }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function navigateWithFade(url) {
+            document.body.classList.remove('fade-in');
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('fade-in');
+        });
+    </script>
+</body>
+
+</html>

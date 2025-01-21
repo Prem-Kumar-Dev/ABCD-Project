@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <title>Register</title>
+        <link rel="stylesheet" type="text/css" href="style/general.css">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="register">
+                <h1>Register</h1>
+                <form action="/register" method="POST">
+                    <img src="style/icons/contact.png" alt="User">
+                    <input class="name" type="text" name="name" placeholder="Name" required>
+                    <input class="email" type="text" name="email" placeholder="Email" required>
+                    <input class="id" type="text" name="ID" placeholder="ID No." required>
+                    <input class="username" type="text" name="username" placeholder="Username" required>
+                    <input class="password" type="password" name="password" placeholder="Password" required>
+                    <button class="button">Register</button>
+                </form>
+                <p class="error-message">
+                    <script>
+                        const urlParams = new URLSearchParams(window.location.search);
+                        if (urlParams.has('error')) {
+                            document.write(urlParams.get('error'));
+                        }
+                    </script>
+                </p>
+
+            </div>
+            <div class="img">
+                <img src="style/icons/register.jpg" alt="Bank">
+            </div>
+        </div>
+        <script>
+            function navigateWithFade(url) {
+                document.body.classList.remove('fade-in');
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 500);
+            }
+    
+            window.addEventListener('DOMContentLoaded', () => {
+                document.body.classList.add('fade-in');
+            });
+        </script>
+    </body>
+
+</html>

@@ -14,6 +14,23 @@ public class User {
     private Timestamp updatedAt;
     private String status;
 
+    // Updated constructor with meaningful parameter names
+    public User(String userId, String name, String email, String password, BigDecimal accountBalance, String phoneNumber, Timestamp createdAt, Timestamp updatedAt, String status) {
+        this.userId = Integer.parseInt(userId);  // Assuming userId is passed as a String
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.accountBalance = accountBalance;
+        this.phoneNumber = phoneNumber;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.status = status;
+    }
+
+    public User() {
+
+    }
+
     // Getters and Setters for all fields
 
     public int getUserId() {
